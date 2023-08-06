@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-const createButton = ({text}) => {
+const Button = ({text}) => {
   return (
     <button>
       <svg
@@ -27,9 +27,10 @@ const createButton = ({text}) => {
 
 root.render(
   <React.Fragment>
-    {createButton({text: 'Button 1'})}
-    {createButton({text: 'Button 2'})}
-    {createButton({text: 'Button 3'})}
+    <Button text= 'Button 1' />
+    <Button text= 'Button 2' />
+    <Button text= 'Button 3' />
+    
     
   </React.Fragment>
 );
