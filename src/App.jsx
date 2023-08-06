@@ -1,19 +1,43 @@
-export function App () {
-    return (
-       <article style={{ display:'flex',alignItems: 'center',color:'#fff' }}>
-       <header>
-        <img alt="El avatar de midudev" src="https://unavatar.io/midudev"></img>
-       <div>
-       <strong>Miguel Angel Duran</strong>
-       <span>@midudev</span>
-       </div>
-        </header>
+import './App.css'
+import { TwitterFollowCard } from './TwitterFollowCard.jsx'
 
-        <aside>
-        <button>
-        Seguir
-        </button>
-        </aside>
-       </article>
-    )
+const users = [
+  {
+    userName: 'midudev',
+    name: 'Miguel Ángel Durán',
+    isFollowing: true
+  },
+  {
+    userName: 'pheralb',
+    name: 'Pablo H.',
+    isFollowing: false
+  },
+  {
+    userName: 'PacoHdezs',
+    name: 'Paco Hdez',
+    isFollowing: true
+  },
+  {
+    userName: 'TMChein',
+    name: 'Tomas',
+    isFollowing: false
+  }
+]
+
+export function App () {
+  return (
+    <section className='App'>
+      {
+        users.map(({ userName, name, isFollowing }) => (
+          <TwitterFollowCard
+            key={userName}
+            userName={userName}
+            initialIsFollowing={isFollowing}
+          >
+            {name}
+          </TwitterFollowCard>
+        ))
+      }
+    </section>
+  )
 }
