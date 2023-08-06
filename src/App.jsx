@@ -1,6 +1,6 @@
 export function App () {
     return (
-       <article>
+       <article style={{ display:'flex',alignItems: 'center',color:'#fff' }}>
        <header>
         <img alt="El avatar de midudev" src="https://unavatar.io/midudev"></img>
        <div>
